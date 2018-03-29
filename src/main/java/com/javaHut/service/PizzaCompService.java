@@ -1,5 +1,4 @@
 package com.javaHut.service;
-
 import java.util.Map;
 
 import org.springframework.stereotype.Component;
@@ -11,24 +10,24 @@ import com.javaHut.dao.PizzaDao;
 //import com.javaHut.Dao.PizzaDao;
 import com.javaHut.model.Pizza;
 
-
+/*
+ * This is the pizza company service class that is used to 
+ * get getMenu function from the pizzaDao class
+ */
 @Component
 public class PizzaCompService {
 
 	PizzaDao pizza;
-	Map<String, Double> pizzaMenu;
-
 	
-	
+	// Constructor to establish a new PizzaDao
 	public PizzaCompService() {
-		pizzaMenu = new HashMap<String,Double>();
 		this.pizza = new PizzaDao();
 	}
-      
+     
+	// This is the method that returns the String for the Menu
 	public String getMenu() {
-		pizzaMenu = (HashMap<String, Double>) pizza.getMenu();
 		String pizzamenu = "";
-		for(Map.Entry<String, Double> entry: pizzaMenu.entrySet()) {
+		for(Map.Entry<String, Double> entry: pizza.getMenu().entrySet()) {
 			pizzamenu+= entry.getKey() + " : "+ entry.getValue() + "\n";
 		}
 		return pizzamenu;

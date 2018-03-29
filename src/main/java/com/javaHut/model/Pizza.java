@@ -1,9 +1,14 @@
 package com.javaHut.model;
+/* 
+ * This is the model for the pizza class
+ */
 
 public class Pizza {
 	
 	private String pizzaName ;
 	private double price;
+	
+	// Constructor
 	public Pizza() {}
 	
 	public Pizza(String pizzaName,double price) {
@@ -11,6 +16,7 @@ public class Pizza {
 		this.price = price;
 	}
 	
+	//Getters
 	public double getPrice() {
 		return price;
 	}
@@ -18,6 +24,4 @@ public class Pizza {
 	public String getPizzaName() {
 		return pizzaName;
 	}
-	
-
 }
